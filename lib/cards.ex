@@ -5,13 +5,6 @@ defmodule Cards do
 
   @doc """
   Creates a deck of cards
-
-  ## Examples
-  
-      iex> deck = Cards.create_deck
-      iex> deck
-      ["Ace of Spades", "Two of Spades", "Three of Spades", ...]
-
   """
   def create_deck do
     values = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"]
@@ -25,23 +18,13 @@ defmodule Cards do
   @doc """
   Suffle the `deck` and returns it to the user.
   The `deck` argument is an array created by `Cards.create_deck`
-
-  ## Examples
-  
-      iex> deck = Cards.create_deck
-      iex> deck
-      [1, 2, 3]
-      iex> deck = Cards.shuffle(deck)
-      iex> deck
-      [2, 3, 1]
-
   """
   def shuffle(deck) do
     Enum.shuffle(deck)
   end
 
   @doc """
-  Check if the `deck` contains the `card`. 
+  Check if the `deck` contains the given `card`. 
   The `deck` argument is an array created by `Cards.create_deck`.
   The `card` argument is a string.
   The return of this function is `true` or `false`.
@@ -49,9 +32,7 @@ defmodule Cards do
   ## Examples
   
       iex> deck = Cards.create_deck
-      iex> deck
-      [Ace of Spades, Ace of Gold]
-      iex> Cards.contains?(deck, "Ace of Gold")
+      iex> Cards.contains?(deck, "Ace of Diamonds")
       true
       iex> Cards.contains?(deck, "potato")
       false
@@ -70,7 +51,7 @@ defmodule Cards do
   ## Examples
   
       iex> deck = Cards.create_deck
-      iex> {hand, deck} = Cards.deal(deck, 1)
+      iex> {hand, second_hand} = Cards.deal(deck, 1)
       iex> hand
       ["Ace of Spades"]
 
@@ -88,8 +69,6 @@ defmodule Cards do
   ## Examples
   
       iex> deck = Cards.create_deck
-      iex> deck
-      [Ace of Spades, Ace of Gold]
       iex> Cards.save(deck, "my_deck")
       :ok
 
@@ -103,11 +82,6 @@ defmodule Cards do
   Loads, from the system, the file cointaining the saved deck 
   The `filename` argument is a string coitaining the file name.
   The return of the function is an array containing the saved deck.
-
-  ## Examples
-  
-      iex> Cards.load("my_deck")
-      [Ace of Spades, Ace of Gold]
   """
   def load(filename) do
     case File.read(filename) do
@@ -120,13 +94,6 @@ defmodule Cards do
   Creates a deck, shuffle it and then divides a deck into a hand and the remainder of the deck. 
   The `hand_size` argument indicates how many cards should be in the hand.
   The return of the function is a tuple containing on the firts index the hand, and on the second the remainder of the deck
-
-  ## Examples
-  
-      iex> deck = Cards.create_hand(1)
-      iex> deck
-      ["Ten of Spades"]
-
   """
   def create_hand(hand_size) do
     Cards.create_deck
