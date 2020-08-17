@@ -1,6 +1,6 @@
 # Cards
 
-**TODO: Add description**
+**This is my first Elixir application. It is part of "The Complete Elixir and Phoenix Bootcamp and Tutorial" course, avaliable at https://udemy.com/course/the-complete-elixir-and-phoenix-bootcamp-and-tutorial/**
 
 ## Installation
 
