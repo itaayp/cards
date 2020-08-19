@@ -17,7 +17,7 @@ In order to run this application, you need to install Elixir in your PC (you can
 If Elixir is already installed, you can download the source code of this application to your PC, run the following command in your terminal:
 ``iex -S mix``.
 And in order to call the functions and play with this game, I'm using exdoc to generate the Documentation. Feel free to read it and play the game!
-The documentation is located at **/cards/index.html**
+The documentation is located at **/cards/doc/index.html**
 
 ## Elixir frameworks applied to this project
   1- Exdoc Framework - to generate the documentation
